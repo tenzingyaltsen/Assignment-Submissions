@@ -1,7 +1,12 @@
+# CR: <- Indicates a code review comment.
+
 # Assignment 3 - Ahmed Mokhtar
 
 #' The text file containing the list of words was created. I then used the 
 #' readLines function to read the file, and assigned it to "list".
+
+#' CR: It may be useful to explain why the suppressWarnings() function was
+#' used.
 
 suppressWarnings(list <- readLines("hangman.txt"))
 
@@ -72,7 +77,9 @@ inputfunction <- function(allinputs) {
 #' Once it passes the test above, it is then checked if the entry has already been 
 #' tried before, by checking if it is in allinputs. If it is, it leaves a message to the
 #' user and restarts the while loop. 
-
+      
+      # CR: Extra white space before the period if this line is executed.
+      
       if (guess %in% allinputs) {
         print(paste("Oh no! Looks like you already made that guess before. Try again", username, "."))
       } else {
@@ -208,3 +215,5 @@ if (all(rightinputs != "_")) {
 } else {
   print(paste0("BOOOOOOOOOO! You've used up all your attempts ", username, "! The word was: ", word))
 }
+
+?trimws
